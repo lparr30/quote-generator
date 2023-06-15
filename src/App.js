@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import quotes from "./quotes"
+import Card from "./components/Card"
+
+let num = quotes[Math.floor(Math.random() * quotes.length)]
+
+const generateQuote = () => {
+  const newCard = document.getElementById("newCard")
+  console.log(newCard);
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Quote Generator</h1>
+      <button onClick={generateQuote}>New Quote</button>
+
+      <Card id="newCard" quote={num.quote} name={num.name} />
     </div>
   );
 }
 
 export default App;
+
+//quotes[Math.floor(Math.random() * quotes.length)]
+//
