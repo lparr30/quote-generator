@@ -13,6 +13,16 @@ const quotes = [
         id: 3,
         name: "Tina Fey",
         quote: "If we're going to pay this much for crab, it better sing and dance and introduce us to the Little Mermaid."
+    },
+    {
+        id: 4,
+        name: "liza",
+        quote: "it's a quote"
+    },
+    {
+        id: 5,
+        name: 'max',
+        quote: 'i like that laugh'
     }   
 ]
 

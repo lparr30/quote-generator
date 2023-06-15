@@ -1,26 +1,32 @@
 import './App.css';
-import quotes from "./quotes"
-import Card from "./components/Card"
+import quotes from "./quotes";
+import Card from "./components/Card";
+import { useState } from 'react';
 
-let num = quotes[Math.floor(Math.random() * quotes.length)]
-
-const generateQuote = () => {
-  const newCard = document.getElementById("newCard")
-  console.log(newCard);
-}
 
 function App() {
+  
+  let num = quotes[Math.floor(Math.random() * quotes.length)];
+
+  function GenerateQuote() {
+    let newNum = quotes[Math.floor(Math.random() * quotes.length)];
+    
+    setNewCard(newNum);
+    
+    return(
+      <Card quote={newNum.quote} name={newNum.name}/>
+      )
+    }
+    
+  const [newCard, setNewCard] = useState(num);
+  
   return (
     <div className="App">
       <h1>Quote Generator</h1>
-      <button onClick={generateQuote}>New Quote</button>
-
-      <Card id="newCard" quote={num.quote} name={num.name} />
+      <button onClick={GenerateQuote}>Give me a new quote!</button>
+      <Card quote={num.quote} name={num.name} />
     </div>
   );
 }
 
 export default App;
-
-//quotes[Math.floor(Math.random() * quotes.length)]
-//
